@@ -1,0 +1,352 @@
+
+		Database of Bank Accounts
+
+LastName   FirstName         SSN   AcctNum   AcctType  Status   Balance   Maturity Date
+     Doe        John   123445678    123456    Savings    open  $ 200.55
+    Beam         Jim   234556789    567890   Checking    open  $1234.56
+    Eyre        Jane   345667890    987654    Savings    open  $   2.33
+  Sawyer         Tom   456778901    234567         CD    open  $ 500.00      07/22/2022
+    Finn        Huck   567889012    345678   Checking    open  $ 123.98
+     Doe        John   123445678    222222         CD    open  $5000.00      12/12/2022
+     Doe        John   123445678    333333   Checking    open  $ 999.99
+    Finn        Huck   567889012    654321    Savings    open  $ 543.66
+  Spratt        Jack   678990123    785609    Savings    open  $ 333.33
+     Doe        Jane   456789012    389765   Checking    open  $ 888.56
+     Doe        Jane   456789012    123123    Savings  closed  $8765.43
+    Dogg       Snoop   183840456    121212    Savings    open  $9782.90
+   James      Lebron   248920195    232323         CD    open  $  17.38      02/01/2025
+   James      Lebron   248920195    878787   Checking  closed  $ 420.69
+   Broke        Bill   918381826    989898    Savings    open  $   0.00
+  Potter       Harry   890310983    616161         CD    open  $9999.92      05/24/2025
+ Simpson         Sam   090312091    317832   Checking    open  $3000.50
+Total Amount in Saving Accounts: $19628.20
+Total Amount in Checking Accounts: $6668.28
+Total Amount in CD Accounts: $15517.30
+Total Amount in All Accounts: $41813.78
+
+Error: z is an invalid selection -  try again
+
+Error: v is an invalid selection -  try again
+
+Transaction Requested: Balance Inquiry
+Account Number: 123456
+Account Type: Savings
+Current Balance: $200.55
+
+Transaction Requested: Balance Inquiry
+Account Number: 222222
+Account Type: CD
+Current Balance: $5000.0
+
+Transaction Requested: Balance Inquiry
+Account Number: 987654
+Account Type: Savings
+Current Balance: $2.33
+
+Transaction Requested: Balance Inquiry
+Account Number: 999999
+Error: Account number 999999 does not exist
+
+Transaction Requested: Deposit
+Account Number: 123456
+Account Type: Savings
+Old Balance: $200.55
+Amount to Deposit: $100.25
+New Balance: $300.80
+
+Transaction Requested: Deposit
+Account Number: 222222
+Account Type: CD
+Old Balance: $5000.00
+Amount to Deposit: $200.55
+New Balance: $5200.55
+CD New Maturity Date: 10/26/2026
+
+Transaction Requested: Deposit
+Account Number: 999999
+Account Type: 
+Old Balance: $0.00
+Amount to Deposit: $123.12
+Error: Account number 999999 does not exist
+
+Transaction Requested: Deposit
+Account Number: 123456
+Account Type: Savings
+Old Balance: $300.80
+Amount to Deposit: $-75.75
+Error: Invalid Deposit Amount
+
+Transaction Requested: Deposit
+Account Number: 616161
+Account Type: CD
+Old Balance: $9999.92
+Amount to Deposit: $42.21
+New Balance: $10042.13
+CD New Maturity Date: 10/26/2027
+
+Transaction Requested: Deposit
+Account Number: 123123
+Account Type: Savings
+Old Balance: $8765.43
+Amount to Deposit: $12.23
+Error: Account is closed
+
+Transaction Requested: Withdrawal
+Account Number: 121212
+Account Type: Savings
+Old Balance: $9782.90
+Amount to Withdrawal: $100.01
+New Balance: $9682.89
+
+Transaction Requested: Withdrawal
+Account Number: 232323
+Account Type: CD
+Old Balance: $17.38
+Amount to Withdrawal: $721.21
+Error: account does not contain sufficient funds
+
+Transaction Requested: Withdrawal
+Account Number: 232323
+Account Type: CD
+Old Balance: $17.38
+Amount to Withdrawal: $-21.89
+Error: Invalid Withdrawal Amount
+
+Transaction Requested: Withdrawal
+Account Number: 616161
+Account Type: CD
+Old Balance: $10042.13
+Amount to Withdrawal: $12.32
+Error: CD maturity date 10/26/2027 not reached
+
+Transaction Requested: Withdrawal
+Account Number: 123123
+Account Type: Savings
+Old Balance: $8765.43
+Amount to Withdrawal: $12.23
+Error: Account is closed
+
+Transaction Requested: Withdrawal
+Account Number: 317832
+Account Type: Checking
+Old Balance: $3000.50
+Amount to Withdrawal: $10.50
+New Balance: $2990.00
+
+Transaction Requested: Clear Check
+Account Number: 567890
+Account Type: Checking
+Old Balance: $1234.56
+Amount to Check: $10.50
+Check Date: 01/20/2025
+Error: Check is older than six months
+
+Transaction Requested: Clear Check
+Account Number: 567890
+Account Type: Checking
+Old Balance: $1234.56
+Amount to Check: $7000.01
+Check Date: 12/12/2024
+Error: Check is older than six months
+
+Transaction Requested: Clear Check
+Account Number: 567890
+Account Type: Checking
+Old Balance: $1234.56
+Amount to Check: $22.22
+Check Date: 04/21/2025
+Error: Check is older than six months
+
+Transaction Requested: Clear Check
+Account Number: 567890
+Account Type: Checking
+Old Balance: $1234.56
+Amount to Check: $13.14
+Check Date: 05/01/2024
+Error: Check is older than six months
+
+Transaction Requested: Clear Check
+Account Number: 234567
+Account Type: CD
+Old Balance: $500.00
+Amount to Check: $23.12
+Check Date: 01/01/2025
+Error: Cannot clear check from non-CD account
+
+Transaction Requested: Clear Check
+Account Number: 878787
+Account Type: Checking
+Old Balance: $420.69
+Amount to Check: $412.31
+Check Date: 05/01/2024
+Error: Account is closed
+
+Transaction Requested: Clear Check
+Account Number: 317832
+Account Type: Checking
+Old Balance: $2990.00
+Amount to Check: $10.50
+Check Date: 03/01/2025
+Error: Check is older than six months
+
+Transaction Requested: Open New Account
+Account Number: 343434
+Account Type: Savings
+New Balance: $6732.85
+
+Transaction Requested: Open New Account
+Account Number: 545454
+Account Type: Checking
+New Balance: $823.12
+
+Transaction Requested: Open New Account
+Account Number: 656565
+Account Type: CD
+New Balance: $75.25
+CD New Maturity Date: 04/26/2027
+
+Transaction Requested: Open New Account
+Account Number: 123456
+Error: Account number 123456 already exists
+
+Transaction Requested: Deposit
+Account Number: 343434
+Account Type: Savings
+Old Balance: $6732.85
+Amount to Deposit: $123.45
+New Balance: $6856.30
+
+Transaction Requested: Withdrawal
+Account Number: 545454
+Account Type: Checking
+Old Balance: $823.12
+Amount to Withdrawal: $99.99
+New Balance: $721.63
+
+Transaction Requested: Delete Account
+Account Number: 989898
+Account number 989898 has successfully been deleted
+
+Transaction Requested: Delete Account
+Account Number: 987654
+Error: Account number 987654 has a non-zero balance
+
+Transaction Requested: Withdrawal
+Account Number: 987654
+Account Type: Savings
+Old Balance: $2.33
+Amount to Withdrawal: $2.33
+New Balance: $0.00
+
+Transaction Requested: Delete Account
+Account Number: 987654
+Account number 987654 has successfully been deleted
+
+Transaction Requested: Account Info
+Social Security Number: 456789012
+LastName   FirstName         SSN   AcctNum   AcctType  Status   Balance   Maturity Date
+     Doe        Jane   456789012    389765   Checking    open  $ 888.56
+     Doe        Jane   456789012    123123    Savings  closed  $8765.43
+2 accounts were found
+
+Transaction Requested: Account Info
+Social Security Number: 123445678
+LastName   FirstName         SSN   AcctNum   AcctType  Status   Balance   Maturity Date
+     Doe        John   123445678    123456    Savings    open  $ 300.80
+     Doe        John   123445678    222222         CD    open  $5200.55   10/26/2026
+     Doe        John   123445678    333333   Checking    open  $ 999.99
+3 accounts were found
+
+Transaction Requested: Account Info
+Social Security Number: 713716737
+Error: No accounts found for SSN 713716737
+
+Transaction Requested: Close Account
+Account Number: 123456
+Account number 123456 has successfully been closed
+
+Transaction Requested: Close Account
+Account Number: 123456
+Error: Account is already closed
+
+Transaction Requested: Close Account
+Account Number: 999999
+Error: Account number 999999 does not exist
+
+Transaction Requested: Reopen Account
+Account Number: 878787
+Account number 878787 has successfully been reopened
+
+Transaction Requested: Reopen Account
+Account Number: 878787
+Error: Account is already open
+
+Transaction Requested: Reopen Account
+Account Number: 999999
+Error: Account number 999999 does not exist
+
+Transaction Requested: Account Info With Transaction History
+Social Security Number: 123445678
+LastName   FirstName         SSN   AcctNum   AcctType  Status   Balance   Maturity Date
+     Doe        John   123445678    123456    Savings  closed  $ 300.80
+ ***** Account Transactions ***** 
+      Date       Transaction     Amount      Status    Balance      Reason For Failure
+04/26/2026  Open New Account  $  200.55        Done  $  200.55  
+04/26/2026   Balance Inquiry  $    0.00        Done  $  200.55  
+04/26/2026           Deposit  $  100.25        Done  $  300.80  
+04/26/2026           Deposit  $  -75.75      Failed  $  300.80  Invalid Deposit Amount
+04/26/2026     Close Account  $    0.00        Done  $  300.80  
+04/26/2026     Close Account  $    0.00      Failed  $  300.80  Account is already closed
+
+     Doe        John   123445678    222222         CD    open  $5200.55   10/26/2026
+ ***** Account Transactions ***** 
+      Date       Transaction     Amount      Status    Balance      Reason For Failure
+04/26/2026  Open New Account  $ 5000.00        Done  $ 5000.00  
+04/26/2026   Balance Inquiry  $    0.00        Done  $ 5000.00  
+04/26/2026           Deposit  $  200.55        Done  $ 5200.55  
+
+     Doe        John   123445678    333333   Checking    open  $ 999.99
+ ***** Account Transactions ***** 
+      Date       Transaction     Amount      Status    Balance      Reason For Failure
+04/26/2026  Open New Account  $  999.99        Done  $  999.99  
+
+3 accounts were found
+
+Transaction Requested: Account Info With Transaction History
+Social Security Number: 537279568
+LastName   FirstName         SSN   AcctNum   AcctType  Status   Balance   Maturity Date
+   James       James   537279568    343434    Savings    open  $6856.30
+ ***** Account Transactions ***** 
+      Date       Transaction     Amount      Status    Balance      Reason For Failure
+04/26/2026  Open New Account  $ 6732.85        Done  $ 6732.85  
+04/26/2026           Deposit  $  123.45        Done  $ 6856.30  
+
+1 accounts were found
+
+
+		Database of Bank Accounts
+
+LastName   FirstName         SSN   AcctNum   AcctType  Status   Balance   Maturity Date
+     Doe        John   123445678    123456    Savings  closed  $ 300.80
+    Beam         Jim   234556789    567890   Checking    open  $1234.56
+  Sawyer         Tom   456778901    234567         CD    open  $ 500.00      07/22/2022
+    Finn        Huck   567889012    345678   Checking    open  $ 123.98
+     Doe        John   123445678    222222         CD    open  $5200.55      10/26/2026
+     Doe        John   123445678    333333   Checking    open  $ 999.99
+    Finn        Huck   567889012    654321    Savings    open  $ 543.66
+  Spratt        Jack   678990123    785609    Savings    open  $ 333.33
+     Doe        Jane   456789012    389765   Checking    open  $ 888.56
+     Doe        Jane   456789012    123123    Savings  closed  $8765.43
+    Dogg       Snoop   183840456    121212    Savings    open  $9682.89
+   James      Lebron   248920195    232323         CD    open  $  17.38      02/01/2025
+   James      Lebron   248920195    878787   Checking    open  $ 420.69
+  Potter       Harry   890310983    616161         CD    open  $10042.13      10/26/2027
+ Simpson         Sam   090312091    317832   Checking    open  $2990.00
+   James       James   537279568    343434    Savings    open  $6856.30
+    Chen        Jack   231543564    545454   Checking    open  $ 721.63
+   Brown        Levy   813123121    656565         CD    open  $  75.25      04/26/2027
+Total Amount in Saving Accounts: $26482.41
+Total Amount in Checking Accounts: $7379.41
+Total Amount in CD Accounts: $15835.31
+Total Amount in All Accounts: $49697.13
+
