@@ -1,3 +1,5 @@
+package generators;
+
 import java.util.Calendar;
 
 public abstract class genTransactionTicket {

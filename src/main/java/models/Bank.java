@@ -1,5 +1,14 @@
+package models;
+
 import java.util.ArrayList;
 import java.util.Calendar;
+import models.Account;
+import accounts.CDAccount;
+import accounts.SavingsAccount;
+import accounts.CheckingAccount;
+import transactions.TransactionReceipt;
+import transactions.TransactionTicket;
+import models.Check;
 
 public class Bank {
 	
@@ -266,12 +275,12 @@ public class Bank {
 	    	{
 	    		CDAccount CDAcct = (CDAccount) account;
 		    	TransactionReceipt receipt = new TransactionReceipt(ticket, true, "", CDAcct.getAcctType(), 0, CDAcct.getBalance(), CDAcct.getMaturityDateStr());
-		    	bank.getLast().addTransaction(receipt);
+		    	bank.get(bank.size() - 1).addTransaction(receipt);
 		    	addToStaticAmount(CDAcct.getBalance(), CDAcct.getAcctType());
 		    	return receipt;
 	    	}
 	    	TransactionReceipt receipt = new TransactionReceipt(ticket, true, "", account.getAcctType(), 0, account.getBalance());
-	    	bank.getLast().addTransaction(receipt);
+	    	bank.get(bank.size() - 1).addTransaction(receipt);
 	    	addToStaticAmount(account.getBalance(), account.getAcctType());
 	    	return receipt;
 	    

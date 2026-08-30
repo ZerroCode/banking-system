@@ -1,3 +1,4 @@
+package generators;
 
 public abstract class genName {
 	
@@ -5,34 +6,29 @@ public abstract class genName {
 	protected String first;
 	
 	//no-arg constructor
-	public genName()
-	{
+	public genName(){
 		this.last = "";
 		this.first = "";
 	}
 
 	//constructor with parameters
-	public genName(String last, String first)
-	{
+	public genName(String last, String first){
 		this.last = last;
 		this.first = first;
 	}
 
 	//copy constructor
-	public genName(genName name)
-	{
+	public genName(genName name){
 		this.last = name.last;
 		this.first = name.first;
 	}
 	
 	//getters
-	public String getLastName()
-	{
+	public String getLastName(){
 		return last;
 	}
 
-	public String getFirstName()
-	{
+	public String getFirstName(){
 		return first;
 	}
 	

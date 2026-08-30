@@ -1,4 +1,11 @@
+package models;
+
 import java.util.ArrayList;
+import generators.genAccount;
+import models.Depositor;
+import transactions.TransactionReceipt;
+import transactions.TransactionTicket;
+
 public class Account extends genAccount {
 	
 	//no-arg constructor

@@ -1,3 +1,6 @@
+package models;
+
+import generators.genName;
 
 public class Name extends genName {
 	

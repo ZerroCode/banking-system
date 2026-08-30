@@ -1,7 +1,23 @@
+package ui;
+
 import java.io.*;
 import java.util.Calendar;
 import java.util.Scanner;
+import models.Bank;
+import models.Name;
+import models.Account;
+import models.Depositor;
+import models.Check;
+import accounts.CDAccount;
+import accounts.SavingsAccount;
+import accounts.CheckingAccount;
+import transactions.TransactionTicket;
+import transactions.TransactionReceipt;
 
+/**
+ * Main application entry point for the Banking System.
+ * Provides user interface and transaction processing.
+ */
 public class pgm {
 
 	public static void main(String[] args) throws IOException
@@ -128,22 +144,26 @@ public class pgm {
 	    	Name name = new Name(tokens[1], tokens[0]);
 	    	Depositor depositor = new Depositor(name, tokens[2]);
             switch (tokens[4]) {
-                case "CD" ->
-//adds CD account to array
-                {
-                    CDAccount account = new CDAccount(depositor, Integer.parseInt(tokens[3]), tokens[4], tokens[5], Double.parseDouble(tokens[6]), tokens[7]);
-                    bank.openNewAcct(account);
-                }
-                case "Savings" ->
-//adds accounts with no maturity date to array
-                {
-                    SavingsAccount account = new SavingsAccount(depositor, Integer.parseInt(tokens[3]), tokens[4], tokens[5], Double.parseDouble(tokens[6]));
-                    bank.openNewAcct(account);
-                }
-                case "Checking" -> {
-                    CheckingAccount account = new CheckingAccount(depositor, Integer.parseInt(tokens[3]), tokens[4], tokens[5], Double.parseDouble(tokens[6]));
-                    bank.openNewAcct(account);
-                }
+                case "CD":
+                    // adds CD account to array
+                    {
+                        CDAccount account = new CDAccount(depositor, Integer.parseInt(tokens[3]), tokens[4], tokens[5], Double.parseDouble(tokens[6]), tokens[7]);
+                        bank.openNewAcct(account);
+                        break;
+                    }
+                case "Savings":
+                    // adds accounts with no maturity date to array
+                    {
+                        SavingsAccount account = new SavingsAccount(depositor, Integer.parseInt(tokens[3]), tokens[4], tokens[5], Double.parseDouble(tokens[6]));
+                        bank.openNewAcct(account);
+                        break;
+                    }
+                case "Checking":
+                    {
+                        CheckingAccount account = new CheckingAccount(depositor, Integer.parseInt(tokens[3]), tokens[4], tokens[5], Double.parseDouble(tokens[6]));
+                        bank.openNewAcct(account);
+                        break;
+                    }
             }
 	    }
 
@@ -435,17 +455,16 @@ social security number, account type, initial opening deposit and CD term
 
 	    //creates new account
 	    Account acct = new Account();
-    acct = switch (type) {
-        case "CD" ->
-//adds CD account to array
+	    if (type.equals("CD")) {
+	        // adds CD account to array
+	        acct = new CDAccount(depositor, requestedAccount, type, "open", bal, dateStr);
+	    } else if (type.equals("Savings")) {
+	        acct = new SavingsAccount(depositor, requestedAccount, type, "open", bal);
+	    } else if (type.equals("Checking")) {
+	        acct = new CheckingAccount(depositor, requestedAccount, type, "open", bal);
+	    }
 
-                new CDAccount(depositor, requestedAccount, type, "open", bal, dateStr);
-        case "Savings" -> new SavingsAccount(depositor, requestedAccount, type, "open", bal);
-        case "Checking" -> new CheckingAccount(depositor, requestedAccount, type, "open", bal);
-        default -> acct;
-    };
-
-    	 //calls the new account method in Bank class
+	    // calls the new account method in Bank class
 	    TransactionReceipt reciept = bankOfAmerica.openNewAcct(acct);
 
 	    //output
@@ -661,21 +680,21 @@ social security number, account type, initial opening deposit and CD term
 			return localFile;
 		}
 
-		File srcFile = new File("src", fileName);
-		if (srcFile.exists())
+		File resourcesFile = new File("src/main/java/resources", fileName);
+		if (resourcesFile.exists())
 		{
-			return srcFile;
+			return resourcesFile;
 		}
 
-		throw new FileNotFoundException("Could not locate " + fileName + " in the working directory or src/");
+		throw new FileNotFoundException("Could not locate " + fileName + " in the working directory or src/main/java/resources/");
 	}
 
 	private static File resolveOutputFile(String fileName)
 	{
-		File srcDir = new File("src");
-		if (srcDir.isDirectory())
+		File resourcesDir = new File("src/main/java/resources");
+		if (resourcesDir.isDirectory())
 		{
-			return new File(srcDir, fileName);
+			return new File(resourcesDir, fileName);
 		}
 		return new File(fileName);
 	}

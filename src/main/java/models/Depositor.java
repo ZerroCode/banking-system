@@ -1,3 +1,6 @@
+package models;
+
+import generators.genDepositor;
 
 public class Depositor extends genDepositor {
 	

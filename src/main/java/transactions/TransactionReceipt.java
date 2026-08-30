@@ -1,4 +1,12 @@
+package transactions;
+
 import java.util.ArrayList;
+import generators.genTransactionReceipt;
+import transactions.TransactionTicket;
+import models.Account;
+import accounts.CDAccount;
+import accounts.SavingsAccount;
+import accounts.CheckingAccount;
 
 public class TransactionReceipt extends genTransactionReceipt {
 	

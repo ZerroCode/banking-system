@@ -1,3 +1,7 @@
+package accounts;
+
+import models.Account;
+import models.Depositor;
 
 public class SavingsAccount extends Account {
 	

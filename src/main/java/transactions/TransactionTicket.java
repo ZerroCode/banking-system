@@ -1,3 +1,6 @@
+package transactions;
+
+import generators.genTransactionTicket;
 
 public class TransactionTicket extends genTransactionTicket {
 	

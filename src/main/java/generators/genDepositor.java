@@ -1,3 +1,6 @@
+package generators;
+
+import models.Name;
 
 public abstract class genDepositor {
 	

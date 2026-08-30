@@ -1,4 +1,9 @@
+package generators;
+
 import java.util.Calendar;
+import generators.genTransactionTicket;
+import transactions.TransactionTicket;
+import models.Account;
 
 public abstract class genTransactionReceipt {
 	

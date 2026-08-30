@@ -1,4 +1,12 @@
+package accounts;
+
 import java.util.Calendar;
+import models.Account;
+import models.Bank;
+import models.Depositor;
+import models.Check;
+import transactions.TransactionReceipt;
+import transactions.TransactionTicket;
 
 public class CheckingAccount extends Account {
 	

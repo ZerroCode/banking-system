@@ -1,4 +1,9 @@
+package generators;
+
 import java.util.ArrayList;
+import models.Depositor;
+import transactions.TransactionReceipt;
+
 public abstract class genAccount {
 	
 	protected int acctNum;
